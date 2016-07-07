@@ -1,0 +1,25 @@
+<%for(x in songs){%>
+<div class="search_result" style="padding : 16px; height : 220px; position: relative;">
+    <div class="row">
+        <div class="col s2">
+            <img src="<%=songs[x].snippet.thumbnails.default.url%>">
+        </div>
+        <div class="col s10">
+            <h6 class="truncate"><%=songs[x].snippet.title%></h6>
+        </div>
+    </div>
+    
+    <div class="row" style="margin-top: 32px">
+    <div class='col s2'>
+        <a class="waves-effect waves-light btn left-align">Watch</a>    
+    </div>
+    <div class='col s2 offset-s8'>
+        <a class="waves-effect waves-light btn right-align song_get_youtube" href="/download/<%=songs[x].id.videoId%>">Download</a>
+    </div>
+    </div>
+    <a></a>
+</div>
+  <div class="divider"></div>
+
+<%}%>
+

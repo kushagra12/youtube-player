@@ -1,0 +1,68 @@
+<% include header %>
+   <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Youtube Player</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li style="margin-left:16px; margin-right:16px">
+            <span amplitude-song-info="name"></span>
+        </li>
+        <li style="margin-left:16px; margin-right:8px">
+          <div class="amplitude-play-pause amplitude-paused" id="play-button" amplitude-main-play-pause="true">
+          <i class="material-icons">play_arrow</i>
+        </div>
+        <li style="margin-right:16px">
+          <div class="amplitude-next">
+            <i class="material-icons">skip_next</i>
+          </div>
+        </li>
+        </li>
+        <li style="margin-left:16px; margin-right:16px">
+          <!--<div id="song-progress">-->
+          <!--<div class="amplitude-song-time-visualization" amplitude-single-song-time-visualization="true" id="song-time-visualization"></div>-->
+          <!--</div>-->
+          <input type="range" class="amplitude-song-slider" style="width : 260px" amplitude-singular-song-slider="true" value="0"/>
+        </li>
+        <li style="margin-left:16px; margin-right:16px">
+        <span class="amplitude-current-minutes" amplitude-single-current-minutes="true">0</span>:<span class="amplitude-current-seconds" amplitude-single-current-seconds="true">00</span>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="row">
+    <div class="col s3 playlist-container">
+      <ul id="playlist">
+        <%for(x in songs){%>
+        <li class='row'>
+          <div class="amplitude-play-pause amplitude-paused col s10" amplitude-song-index="<%=x%>">
+          <a class="song-playlist-x"href="/audio/<%=songs[x].youtube_id%>">
+                <span class="truncate"><%=songs[x].title%></span>
+            </a>
+          </div>
+          <a href="/audio/<%=songs[x].youtube_id%>">
+            <i class="material-icons col s2 md-18">file_download</i>
+          </a>
+        </li>
+        <%}%>
+      </ul>
+    </div>
+
+    <div class="col s9">
+    <h1><%-title %></h1>
+        <div class="row">
+        <div class="input-field col s9">
+          <input id="search_term" type="text" class="validate">
+          <label for="search_term">Search for a new Song</label>
+        </div>
+        <div class="col s3" style="position: relative;">
+        <button class="btn waves-effect waves-light" id="song-search" style="position: relative;bottom: 4px;right: 4px;">Submit
+    <i class="material-icons right">send</i>
+  </button>
+      </div>
+      </div>
+      <div id="search_results"></div>
+    </div>
+
+</div>
+
+    <% include footer %>

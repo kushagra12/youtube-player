@@ -1,0 +1,24 @@
+div#song-time-visualization{
+    width: 260px;
+    height: 5px;
+    background-color: #eceff1;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+div#song-time-visualization div.amplitude-song-time-visualization-status{
+    background-color: #26a69a ;
+    height: 5px;
+}
+
+#song-progress{
+    height: 64px;
+    -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.playlist-contianer{
+    height: 100%;
+    margin: 0px;
+}
